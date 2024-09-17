@@ -121,10 +121,7 @@ function App() {
         // Verifica se a linha contém o ID
         if (line.includes(id)) {
           // Se o ID for encontrado na linha, faz a substituição de DE para PARA
-          modifiedContent = modifiedContent.replaceAll(
-            searchValue,
-            replaceValue
-          );
+          modifiedLine = modifiedLine.replaceAll(searchValue, replaceValue);
         }
       }
 
