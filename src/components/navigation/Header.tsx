@@ -13,17 +13,7 @@ export function Header() {
         </div>
 
         <a className="font-bold text-primary hover:underline" href="/">
-          <img
-            src="/logo.webp"
-            alt="Logo"
-            className="h-12"
-            style={{
-              filter:
-                theme === "dark"
-                  ? "invert(1) grayscale(1) brightness(2)"
-                  : "none"
-            }}
-          />
+          <img src="/logo-header.png" alt="Logo" className="h-16" />
         </a>
 
         <ThemeToggle />
