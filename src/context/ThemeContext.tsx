@@ -19,11 +19,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>();
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("phcont@theme") as Theme | null;
+    const savedTheme = localStorage.getItem("webappazul@theme") as Theme | null;
     if (savedTheme) {
       setTheme(savedTheme);
     } else {
-      setTheme("light");
+      setTheme("dark");
     }
   }, []);
 
@@ -35,7 +35,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       document.documentElement.classList.remove("dark");
     }
 
-    localStorage.setItem("phcont@theme", theme);
+    localStorage.setItem("webappazul@theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
