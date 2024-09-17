@@ -28,7 +28,7 @@ function App() {
           excelColumnDE,
           excelColumnPARA
         );
-        downloadTxtFile(replaced, "EDF_CHANGED.txt");
+        downloadTxtFile(replaced, "EDF_AZUL.txt");
         // clear all states
         setExcelColumnDE([]);
         setExcelColumnPARA([]);
