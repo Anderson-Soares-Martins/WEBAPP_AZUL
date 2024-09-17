@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+}
+
+@layer base {
+  :root {
+    --background: 255 48% 98%;
+    --foreground: 255 57% 0%;
+    --muted: 255 35% 85%;
+    --muted-foreground: 255 5% 28%;
+    --popover: 255 48% 97%;
+    --popover-foreground: 0 0% 0%;
+    --card: 255 48% 97%;
+    --card-foreground: 0 0% 0%;
+    --border: 255 3% 91%;
+    --input: 255 3% 91%;
+    --primary: 255 84% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 255 12% 83%;
+    --secondary-foreground: 255 12% 23%;
+    --accent: 255 12% 83%;
+    --accent-foreground: 255 12% 23%;
+    --destructive: 7 85% 28%;
+    --destructive-foreground: 7 85% 88%;
+    --ring: 255 84% 64%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 255 46% 2%;
+    --foreground: 255 19% 100%;
+    --muted: 255 35% 15%;
+    --muted-foreground: 255 5% 72%;
+    --popover: 255 46% 3%;
+    --popover-foreground: 0 0% 100%;
+    --card: 255 46% 3%;
+    --card-foreground: 0 0% 100%;
+    --border: 255 3% 12%;
+    --input: 255 3% 12%;
+    --primary: 255 84% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 255 3% 14%;
+    --secondary-foreground: 255 3% 74%;
+    --accent: 255 3% 14%;
+    --accent-foreground: 255 3% 74%;
+    --destructive: 7 85% 57%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 255 84% 64%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    height: 100vh;
+  }
+}
+
+.shadow {
+  position: absolute;
+  background: hsl(var(--primary) / 0%);
+  border-radius: 24px;
+  rotate: 35deg;
+
+  width: 260px;
+  top: -200px;
+  height: 400px;
+  filter: blur(150px);
+  animation: shadow-slide infinite 4s linear alternate;
+}
+
+@keyframes shadow-slide {
+  from {
+    background: hsl(var(--primary) / 10%);
+    right: 960px;
+  }
+  to {
+    background: hsl(var(--primary) / 30%);
+    right: 660px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .shadow {
+    top: 70px;
+  }
+
+  @keyframes shadow-slide {
+    from {
+      background: hsl(var(--primary) / 20%);
+      right: 460px;
+    }
+    to {
+      background: hsl(var(--primary) / 50%);
+      right: 160px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .shadow {
+    top: 70px;
+    width: 100px;
+    height: 350px;
+    filter: blur(60px);
+  }
+
+  @keyframes shadow-slide {
+    from {
+      background: hsl(var(--primary) / 20%);
+      right: 280px;
+    }
+    to {
+      background: hsl(var(--primary) / 30%);
+      right: 100px;
+    }
+  }
+}
